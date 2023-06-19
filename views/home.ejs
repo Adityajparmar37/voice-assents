@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-To-Speech</title>
+    <!-- <link rel="styleSheet" href="/voice_ass/views/styel.css"> -->
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(to right bottom, #d13cff, #031f6a);
+            color: #000;
+            font-size: 16px;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: #ffffff;
+            background-image: -webkit-linear-gradient(315deg, #ffffff 43%, rgb(247, 241, 170) 53%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text {
+            /* width: 100%; */
+            height: 200px;
+            border-radius: 10px;
+            resize: none;
+            font-size: 20px;
+            margin-bottom: 25px;
+            border-style: none;
+            padding: 15px;
+
+            box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55) inset;
+            -webkit-box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55) inset;
+            -moz-box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55) inset;
+
+        }
+
+        label {
+            font-size: 26px;
+            color: #ffff;
+            background-image: -webkit-linear-gradient(315deg, #ffffff 50%, rgb(247, 241, 170) 50%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .name {
+            font-size: 20px;
+            color: rgba(107, 105, 105, 0.895);
+        }
+
+        .submit {
+            padding: 12px 20px;
+            background: #0ea4dacf;
+            border: 0;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 25px;
+            box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55);
+            -webkit-box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55);
+            -moz-box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55);
+        }
+
+        .submit:hover {
+
+            box-shadow: 0px 1px 2px 0px rgba(0, 255, 255, 0.7),
+                1px 2px 4px 0px rgba(0, 255, 255, 0.7),
+                2px 4px 8px 0px rgba(0, 255, 255, 0.7),
+                2px 4px 16px 0px rgba(0, 255, 255, 0.7);
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="/" method="post">
+        <div class="text-to-speech">
+            <h1>Text To Speech Convertor</h1>
+            <textarea name="text" rows="4" class="text" cols="70" class="text">Enter the text to convert</textarea>
+            <div class="DropDown">
+                <label for="select">Select Language of Voice: </label>
+                <select name="language" class="name">
+                    <option value="af" selected>Afrikaans</option>
+                    <option value="sq">Albanian</option>
+                    <option value="hy">Armenina</option>
+                    <option value="ar">Arabic</option>
+                    <option value="zh">Chinese</option>
+                    <option value="ca">Catalan</option>
+                    <option value="zh-tw">Chinese (Mandarin/Taiwan)</option>
+                    <option value="zh-cn">Chinese (Mandarin/China)</option>
+                    <option value="zh-yue">Chinese (Cantonese)</option>
+                    <option value="hr">Croatian</option>
+                    <option value="cs">Czech</option>
+                    <option value="da">Danish</option>
+                    <option value="nl">Dutch</option>
+                    <option value="en">English</option>
+                    <option value="en-au">English (Australia)</option>
+                    <option value="en-uk">English (United Kingdom)</option>
+                    <option value="en-us">English (United States)</option>
+                    <option value="eo">Esperanto</option>
+                    <option value="fi">Finnish</option>
+                    <option value="de">German</option>
+                    <option value="gu">Gujarati</option>
+                    <option value="fr">French</option>
+                    <option value="el">Greek</option>
+                    <option value="ht">Haitian Creole</option>
+                    <option value="hi">Hindi</option>
+                    <option value="hu">Hungarian</option>
+                    <option value="is">Icelandic</option>
+                    <option value="id">Indonesian</option>
+                    <option value="it">Italian</option>
+                    <option value="ja">Japanese</option>
+                    <option value="ko">Korean</option>
+                    <option value="la">Latin</option>
+                    <option value="lv">Latvian</option>
+                    <option value="mk">Macedonian</option>
+                    <option value="no">Norwegian</option>
+                    <option value="pl">Polish</option>
+                    <option value="pt">Portuguese</option>
+                    <option value="pt-br">Portuguese (Brazil)</option>
+                    <option value="ro">Romanian</option>
+                    <option value="ru">Russian</option>
+                    <option value="sr">Serbian</option>
+                    <option value="sk">Slovak</option>
+                    <option value="es">Spanish</option>
+                    <option value="es-es">Spanish (Spain)</option>
+                    <option value="es-us">Spanish (United States)</option>
+                    <option value="sw">Swahili</option>
+                    <option value="sv">Swedish</option>
+                    <option value="ta">Tamil</option>
+                    <option value="th">Thai</option>
+                    <option value="tr">Turkish</option>
+                    <option value="vi">Vietnamese</option>
+                    <option value="cy">Welsh</option>
+                </select>
+            </div>
+            <input class="submit" type="submit" value="Speech To Text">
+        </div>
+    </form>
+</body>
+
+</html>
