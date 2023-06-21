@@ -2,13 +2,15 @@ const express = require("express");
 const gtts = require("gtts");
 const fs = require("fs");
 const path = require("path");
-// const say = require("say");
 const bodyParser = require("body-parser");
+// const say = require("say");
 
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('View engine', 'ejs')
+
+// const pathName = path.join(__dirname+"/home.html")
 
 app.get("/", (req, res) => {
     res.render("home.ejs");
@@ -21,11 +23,9 @@ app.post('/', (req, res) => {
     const text = req.body.text
     const lang = req.body.language
 
+
     var voice = new gtts(text, lang);
-
     outputFile = Date.now() + "output.mp3";
-
-    // say.speak(voice);
 
     voice.save(outputFile, (err, result) => {
 
@@ -44,5 +44,6 @@ app.post('/', (req, res) => {
         })
     })
 })
+
 
 app.listen(1500);
